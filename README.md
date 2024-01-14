@@ -7,7 +7,7 @@ This is a PyTorch implementation of the paper "Prompt-Adaptive Hyper-Message Ove
 * torch==1.8.0
 
 ## News
-News headlines for these entities are collected from Jan. 2016 to Dec. 2019 from [Benzinga](https://github.com/Benzinga/benzinga-python-client).
+News headlines are collected from [Benzinga](https://github.com/Benzinga/benzinga-python-client).
 
 ## How to train the model
 1. Run `MPA.ipynb`.
