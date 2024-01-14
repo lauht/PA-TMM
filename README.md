@@ -6,6 +6,9 @@ This is a PyTorch implementation of the paper "Prompt-Adaptive Hyper-Message Ove
 * python==3.7.13
 * torch==1.8.0
 
+## News
+News headlines for these entities are collected from Jan. 2016 to Dec. 2019 from [Benzinga](https://github.com/Benzinga/benzinga-python-client).
+
 ## How to train the model
 1. Run `MPA.ipynb`.
 This script would pre-train the HMON through the movement prompt adaptation strategy.
