@@ -44,8 +44,8 @@ class HMON(nn.Module):
         self.rnn = PriceEmbedding(n_feat=n_feat, out_dim=dp, rnn_layers=2, dropout=dropout)
         self.Wum = nn.Parameter(torch.Tensor(dm+1, dr))
         self.Wvm = nn.Parameter(torch.Tensor(dm+1, dr))
-        self.Wup = nn.Parameter(torch.Tensor(dp, dr))
-        self.Wvp = nn.Parameter(torch.Tensor(dp, dr))
+        self.Wup = nn.Parameter(torch.Tensor(dp+1, dr))
+        self.Wvp = nn.Parameter(torch.Tensor(dp+1, dr))
         self.prompt_encoding = nn.Linear(3*dr, 2)
         self.hybrid_embedding = nn.Linear(3*dr, dh)
         self.act = nn.Linear(dh+2, self.dn, bias=True)
@@ -130,8 +130,8 @@ class HMON(nn.Module):
         ## multi-modal decomposition
         u_m = self.leaky_relu(torch.cat([m, activation_status], dim=1).matmul(self.Wum))
         v_m = self.leaky_relu(torch.cat([m, activation_status], dim=1).matmul(self.Wvm)) 
-        u_p = self.leaky_relu(p.matmul(self.Wup)) 
-        v_p = self.leaky_relu(p.matmul(self.Wvp)) 
+        u_p = self.leaky_relu(torch.cat([p, activation_status], dim=1).matmul(self.Wup)) 
+        v_p = self.leaky_relu(torch.cat([p, activation_status], dim=1).matmul(self.Wvp)) 
 
         ## multi-modal integration
         h_pmt = self.prompt_encoding(torch.cat([u_m, u_m * v_p, v_p], dim=1)) 
