@@ -1,6 +1,6 @@
 # PA-HMON
 
-This is a PyTorch implementation of the paper "Prompt-Adaptive Hyper-Message Overflow Networks: Enhancing Stock Movement Prediction by Mitigating Information Asymmetry".
+This is a PyTorch implementation of the paper "Message-Driven Prompts: Enhancing Stock Movement Prediction by \\ Adapting to Information Asymmetry in Stock Networks".
 
 ## Requirements
 * python==3.7.13
