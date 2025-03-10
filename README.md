@@ -11,6 +11,6 @@ News headlines are collected from [Benzinga](https://github.com/Benzinga/benzing
 
 ## How to train the model
 1. Run `MPA.ipynb`.
-This script would build and pre-train a PA-TMM with the movement prompt adaptation strategy.
+This script would build and pre-train a PA-TMM model with the movement prompt adaptation strategy.
 2. Run `PA-TMM.ipynb`.
 This script would load the pre-trained parameters to the PA-TMM model, and then fine-tune it.
